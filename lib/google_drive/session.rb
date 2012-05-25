@@ -142,7 +142,7 @@ module GoogleDrive
               :get, "https://spreadsheets.google.com/feeds/spreadsheets/private/full?#{query}")
           result = []
           doc.css("feed > entry").each() do |entry|
-            warn("entry: {entry.inspect}")
+            warn("entry: #{entry.inspect}")
             title = entry.css("title").text
             url = entry.css(
               "link[rel='http://schemas.google.com/spreadsheets/2006#worksheetsfeed']")[0]["href"]
